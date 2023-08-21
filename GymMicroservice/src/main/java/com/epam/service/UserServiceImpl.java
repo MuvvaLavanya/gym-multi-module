@@ -1,5 +1,6 @@
 package com.epam.service;
 
+import com.epam.dto.response.CredentialsDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,17 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	PasswordEncoder encoder;
 	
-	static final String USER_EXCEPTION = "User with username & password not found"; 
+	static final String USER_EXCEPTION = "User with username & password not found";
+
+//	@Override
+//	public boolean validateUser(CredentialsDto credentials) {
+//		log.info("Entered into validateUser");
+//		return userRepository.findByUsernameAndPassword(credentials.getUsername(), credentials.getPassword()).map(user->{
+//			log.info("Login successfull");
+//			return true;
+//		}).orElseThrow(() -> new UserException(USER_EXCEPTION));
+//
+//	}
 	
 	
 	@Override
